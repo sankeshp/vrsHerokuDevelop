@@ -24,7 +24,7 @@
   @Bean public DataSource datasource() { DriverManagerDataSource datasource=new
   DriverManagerDataSource();
   datasource.setDriverClassName("org.postgresql.Driver");
-  datasource.setUrl("postgres://traprhfkkrtqzy:ef078c1b89cae02384d7eeef579119d14fbcfe46957cdf6cc344ef9a5d1a3c87@ec2-54-165-164-38.compute-1.amazonaws.com:5432/d8dngts6l9q7bf");
+  datasource.setUrl("jdbc:postgres://traprhfkkrtqzy:ef078c1b89cae02384d7eeef579119d14fbcfe46957cdf6cc344ef9a5d1a3c87@ec2-54-165-164-38.compute-1.amazonaws.com:5432/d8dngts6l9q7bf");
   datasource.setUsername("sankeshspathak@gmail.com"); datasource.setPassword("123Wanted@"); return
   datasource; }
   
