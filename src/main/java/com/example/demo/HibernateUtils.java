@@ -23,9 +23,9 @@
 	  
   @Bean public DataSource datasource() { DriverManagerDataSource datasource=new
   DriverManagerDataSource();
-  datasource.setDriverClassName("org.postgresql.Driver");
-  datasource.setUrl("jdbc:postgres://traprhfkkrtqzy:ef078c1b89cae02384d7eeef579119d14fbcfe46957cdf6cc344ef9a5d1a3c87@ec2-54-165-164-38.compute-1.amazonaws.com:5432/d8dngts6l9q7bf");
-  datasource.setUsername("sankeshspathak@gmail.com"); datasource.setPassword("123Wanted@"); return
+  datasource.setDriverClassName("com.mysql.jdbc.Driver");
+  datasource.setUrl("jdbc:https://databases.000webhost.com/db_structure.php?server=1&db=id15150205_vrs");
+  datasource.setUsername("id15150205_vrs"); datasource.setPassword("vrs@123456789SP"); return
   datasource; }
   
   @Bean public LocalSessionFactoryBean sessionFactory() {
@@ -36,7 +36,7 @@
   
   
   //hibernateProperties.put("spring.jpa.properties.hibernate.dialect","org.hibernate.dialect.MySQL5InnoDBDialect");
-   hibernateProperties.put("hibernate.dialect","org.hibernate.dialect.PostgreSQLDialect");
+   hibernateProperties.put("hibernate.dialect","org.hibernate.dialect.MySQL5InnoDBDialect");
   //hibernateProperties.put("spring.jpa.show-sql","true");
   //hibernateProperties.put("spring.jpa.hibernate.ddl-auto","update");
   hibernateProperties.put("hibernate.hbm2ddl.auto","update");
