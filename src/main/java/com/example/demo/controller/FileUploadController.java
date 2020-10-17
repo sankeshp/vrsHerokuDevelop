@@ -36,8 +36,8 @@ public class FileUploadController {
 	public String uploadFile(@RequestParam("contents") MultipartFile file, Model map, HttpServletRequest request,
 			RedirectAttributes flashMap	,@RequestParam int vid 	) {
 				
-		String path=new File("").getAbsolutePath();
-		String uploadLocation = path+"\\src\\main\\webapp\\bootstrap\\images";
+		//String path=new File("").getAbsolutePath();
+		String uploadLocation = "\\src\\main\\webapp\\bootstrap\\images";
 				//request.getServletContext().getRealPath("/images");
 
 		System.out.println(
