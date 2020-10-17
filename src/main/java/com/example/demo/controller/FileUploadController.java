@@ -36,12 +36,12 @@ public class FileUploadController {
 	public String uploadFile(@RequestParam("contents") MultipartFile file, Model map, HttpServletRequest request,
 			RedirectAttributes flashMap	,@RequestParam int vid 	) {
 				
-		//String path=new File("").getAbsolutePath();
+		String path=new File("").getAbsolutePath();
 		String uploadLocation = "\\src\\main\\webapp\\bootstrap\\images";
 				//request.getServletContext().getRealPath("/images");
-
+		System.out.println(path);
 		System.out.println(
-				"in upload file " + file.getOriginalFilename() + " size " + file.getSize() + " " + uploadLocation);
+				"in upload file " + file.getOriginalFilename() + " size " + file.getSize() + " " + path);
 		try {
 			File dest=new File(uploadLocation, file.getOriginalFilename());
 			
