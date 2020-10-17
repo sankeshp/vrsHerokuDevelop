@@ -89,9 +89,12 @@
 		    <groupId>org.apache.tomcat</groupId>
 		    <artifactId>tomcat-jasper</artifactId>
 		    <version>9.0.38</version>
-		</dependency>
-		
- 
+		</dependency>		
+	    <dependency>
+			  <groupId>org.postgresql</groupId>
+			  <artifactId>postgresql</artifactId>
+			</dependency>
+		</dependencies>
         <dependency>
              <groupId>org.springframework.boot</groupId>
              <artifactId>spring-boot-devtools</artifactId>
