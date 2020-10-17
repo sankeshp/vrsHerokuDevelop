@@ -43,7 +43,7 @@ public class FileUploadController {
 		System.out.println(
 				"in upload file " + file.getOriginalFilename() + " size " + file.getSize() + " " + path);
 		try {
-			File dest=new File(uploadLocation, file.getOriginalFilename());
+			File dest=new File(path, file.getOriginalFilename());
 			
 			file.transferTo(dest);
 			
