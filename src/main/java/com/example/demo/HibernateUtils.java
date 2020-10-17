@@ -24,7 +24,7 @@
   @Bean public DataSource datasource() { DriverManagerDataSource datasource=new
   DriverManagerDataSource();
   datasource.setDriverClassName("com.mysql.jdbc.Driver");
-  datasource.setUrl("jdbc:https://databases.000webhost.com/id15150205_vrs");
+  datasource.setUrl("jdbc:mysql://databases.000webhost.com/id15150205_vrs");
   datasource.setUsername("id15150205_vrsroot"); datasource.setPassword("vrs@123456789SP"); return
   datasource; }
   
