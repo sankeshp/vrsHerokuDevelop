@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.dao.DataIntegrityViolationException;
 
 import com.example.demo.pojos.Users;
 import com.example.demo.pojos.Vehicle;
@@ -152,7 +154,7 @@ public class MainController {
 		System.out.println("email "+u_email+" pwd "+u_password);
 		try {
 			details = service.validateUser(u_email, u_password);
-		} catch (NoResultException e) {
+		} catch (EmptyResultDataAccessException e) {
 			System.out.println("err in controller " + e);
 			map.addAttribute("mesg", "Invalid Login Pls retry ....");
 		}
@@ -183,7 +185,13 @@ public class MainController {
 	public String processRegistrationPage(Users u,RedirectAttributes flashMap)
 	{
 		System.out.println("in process add user "+u);
+		try {
 		flashMap.addFlashAttribute("mesg", service.registerUsers(u));
+		} catch (DataIntegrityViolationException e) {
+			System.out.println("err in controller " + e);
+			flashMap.addFlashAttribute("msg", "Invalid Data Pls retry ....");
+			return "redirect:/main/registration";
+		}
 		return "redirect:/main/login";
 	}
 	

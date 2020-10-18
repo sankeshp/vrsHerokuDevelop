@@ -69,7 +69,7 @@ In Login
           </form>
           <div class="text-center">
             <a class="d-block small mt-3" href="<spring:url value='/main/registration'/>">Register an Account</a>
-            <a class="d-block small" href="userForgotPassword">Forgot Password?</a>
+              <a class="d-block small" href="<spring:url value='/main/login'/>">Forgot Password?</a>
           </div>
         </div>
       </div>

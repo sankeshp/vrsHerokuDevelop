@@ -19,7 +19,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/main/navigation.jsp" />
-${requestScope.mesg}
+<h3 align="center">${requestScope.mesg}</h3><br/>
 <!-- <form method="post" enctype="multipart/form-data">
 		Choose File to Upload : <input type="file" name="contents" /> <input
 			type="submit"  />

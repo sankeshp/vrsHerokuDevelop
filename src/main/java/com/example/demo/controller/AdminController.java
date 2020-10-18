@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.dao.DataIntegrityViolationException;
 
 import com.example.demo.pojos.Orders;
 import com.example.demo.pojos.Users;
@@ -96,7 +97,13 @@ import com.example.demo.service.AdminService;
 		{
 			System.out.println("in process add vendor "+v);
 			//invoke sevice layer method
-			flashMap.addFlashAttribute("mesg", service.registerVehicle(v));
+			try {
+				flashMap.addFlashAttribute("mesg", service.registerVehicle(v));
+				} catch (DataIntegrityViolationException e) {
+					System.out.println("err in controller " + e);
+					flashMap.addFlashAttribute("mesg", "Invalid Data Pls retry ....");
+					return "redirect:/upload/uploadForm?vid=0";
+				}
 			return "redirect:/admin/vehicleDetails";
 		}
 		

@@ -82,7 +82,7 @@ public class UserController {
 		hs.setAttribute("order_dtls", o);
 		Vehicle v=(Vehicle) hs.getAttribute("vehicle_dtls");
 		Users u=(Users) hs.getAttribute("user_dtls");
-		flashMap.addFlashAttribute("mesg", "Orders added with id: "+o.getO_id()+" Confirmation sent to your mail id: "+u.getU_email());
+		flashMap.addFlashAttribute("mesg", "Orders added with id: "+o.getO_id()+" Confirmation sent to your mail id: "+u.getU_email()+" You can check your order in User->Orders List Section.");
 		//flashMap.addFlashAttribute("order_dtl", o);
 		System.out.println("in processBookingFormPage user "+u+" vehicle "+v+" order "+o);
 		
