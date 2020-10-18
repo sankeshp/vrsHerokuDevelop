@@ -10,7 +10,7 @@
 </head>
 <body>
 
- <footer class="py-3 sticky-footer bg-dark">
+  <footer class="py-3 bg-dark footer fixed-bottom">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; vehicle-rental-system.herokuapp.com 2020</p>
       </div>
