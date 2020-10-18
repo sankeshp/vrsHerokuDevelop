@@ -37,7 +37,7 @@ public class FileUploadController {
 			RedirectAttributes flashMap	,@RequestParam int vid 	) {
 				
 		String path=new File("").getAbsolutePath();
-		String uploadLocation = "\\src\\main\\webapp\\bootstrap\\images";
+		String uploadLocation = "app\\src\\main\\webapp\\bootstrap\\images";
 				//request.getServletContext().getRealPath("/images");
 		System.out.println(path);
 		System.out.println(uploadLocation);
