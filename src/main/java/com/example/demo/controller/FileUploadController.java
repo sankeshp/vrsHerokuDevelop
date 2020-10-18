@@ -37,15 +37,16 @@ public class FileUploadController {
 			RedirectAttributes flashMap	,@RequestParam int vid 	) {
 				
 		String path=new File("").getAbsolutePath();
-		String uploadLocation = "\\src\\main\\webapp\\bootstrap\\images";
+		String uploadLocation = "app\\src\\main\\webapp\\bootstrap\\images";
 				//request.getServletContext().getRealPath("/images");
 		System.out.println(path);
+		System.out.println(uploadLocation);
 		System.out.println(
 				"in upload file " + file.getOriginalFilename() + " size " + file.getSize() + " " + path);
 		try {
 			File dest=new File(path, file.getOriginalFilename());
 			
-			file.transferTo(dest);
+			file.transferTo(uploadLocation);
 			
 			flashMap.addAttribute("img_name", file.getOriginalFilename());
 		} catch (Exception e) {
